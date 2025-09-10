@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6782325107195545477}
   - component: {fileID: -24208120652482280}
   - component: {fileID: -6282280516573506030}
+  - component: {fileID: -2066749938674856646}
   m_Layer: 0
   m_Name: dreamcatcher
   m_TagString: Untagged
@@ -99,7 +100,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4290421323574047316}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63d46665b65266843b9ee7a437b5911f, type: 3}
   m_Name: 
@@ -150,3 +151,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.11, y: 1.76}
   m_EdgeRadius: 0
+--- !u!114 &-2066749938674856646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4290421323574047316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0be18e4b6f9c841419991402ba7e3cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardDraggable
+  unitPrefab: {fileID: 4290421323574047316}
