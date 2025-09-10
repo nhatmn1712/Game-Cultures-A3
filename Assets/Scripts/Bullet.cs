@@ -1,27 +1,26 @@
+// Bullet.cs
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public float speed = 8f;
     public int damage = 1;
-    public float speed = 8f;      // units/second
-    public float lifetime = 6f;   // auto–destroy if it never hits
+    public float maxLife = 5f;
 
-    private void Start()
+    void Start()
     {
-        Destroy(gameObject, lifetime);
+        Destroy(gameObject, maxLife);
     }
 
-    private void Update()
+    void Update()
     {
-        // Move right each frame
-        transform.position += new Vector3(speed * Time.deltaTime, 0f, 0f);
-        // (The video uses Time.fixedDeltaTime in Update; using Time.deltaTime in Update is the standard.)
+        // move to the right
+        transform.Translate(Vector3.right * speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // If we hit a zombie, damage it and destroy the pea
-        Zombie z = other.GetComponent<Zombie>();
+        var z = other.GetComponent<Zombie>();
         if (z != null)
         {
             z.TakeDamage(damage);

@@ -1,23 +1,20 @@
+// Zombie.cs
 using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-
-    public float speed;
-
-    public int health;
+    public float speed = 1.5f;
+    public int health = 5;
 
     private void FixedUpdate()
     {
-        transform.position -= new Vector3(speed * Time.fixedDeltaTime, 0f, 0f);
+        // move left each physics tick
+        transform.position += Vector3.left * speed * Time.fixedDeltaTime;
     }
 
     public void TakeDamage(int amount)
     {
         health -= amount;
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
+        if (health <= 0) Destroy(gameObject);
     }
 }

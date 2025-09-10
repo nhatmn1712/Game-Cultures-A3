@@ -1,51 +1,122 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
-public class PlantSlot : MonoBehaviour
+public class PlantSlot : MonoBehaviour,
+    IPointerDownHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    [Header("Card Data")]
     public Sprite plantSprite;
-    public GameObject plantObject;
-    public int price;
+    public GameObject plantPrefab;        // your dreamcatcher/peashooter prefab
+    public int price = 0;
 
+    [Header("Card UI")]
     public Image icon;
     public TextMeshProUGUI priceText;
 
-    // NOTE: match the exact class name of your manager script
-    private Gamemanager gms;
+    private Camera cam;
+    private GameObject draggingPlant;
+    private static readonly Color Ghost = new Color(1f, 1f, 1f, 0.6f);
 
-    private void Start()
+    void Awake()
     {
-        // find the Gamemanager component on the object named "GameManager"
-        gms = GameObject.Find("GameManager").GetComponent<Gamemanager>();
+        cam = Camera.main;
 
-        // hook up the button
-        GetComponent<Button>().onClick.AddListener(BuyPlant);
+        if (icon) { icon.enabled = plantSprite != null; icon.sprite = plantSprite; }
+        if (priceText) priceText.text = price.ToString();
 
-        // optional: update the UI at start
-        OnValidate();
+        // If this object also has a Button, clear onClick to avoid conflicts with drag:
+        var btn = GetComponent<Button>();
+        if (btn) btn.onClick.RemoveAllListeners();
     }
 
-    private void BuyPlant()
+    public void OnPointerDown(PointerEventData _)
     {
-        if (gms == null)
-        {
-            Debug.LogError("[PlantSlot] Gamemanager not found.");
+        // Only start if we can afford
+        if (!GameManager.instance || !GameManager.instance.CanAfford(price))
             return;
-        }
 
-        gms.BuyPlant(plantObject, plantSprite, price);
+        // Spawn ONE ghost copy to drag
+        draggingPlant = Instantiate(plantPrefab, MouseWorld(), Quaternion.identity);
+
+        // ghost look + disable colliders while dragging
+        var sr = draggingPlant.GetComponentInChildren<SpriteRenderer>();
+        if (sr) sr.color = Ghost;
+        SetAllCollidersEnabled(draggingPlant, false);
+
+        // keep the unit passive while dragging (disable shooter)
+        var shooter = draggingPlant.GetComponentInChildren<ShooterPlant>(true);
+        if (shooter) shooter.enabled = false;
     }
 
-    private void OnValidate()
+    public void OnBeginDrag(PointerEventData _) { /* nothing needed */ }
+
+    public void OnDrag(PointerEventData _)
     {
-        if (icon != null)
+        if (draggingPlant) draggingPlant.transform.position = MouseWorld();
+    }
+
+    public void OnEndDrag(PointerEventData _)
+    {
+        if (!draggingPlant) return;
+
+        // Look for a free DropSlot under the mouse
+        Vector2 p = MouseWorld();
+        var hits = Physics2D.OverlapPointAll(p);
+
+        DropSlot target = null;
+        foreach (var h in hits)
         {
-            icon.enabled = plantSprite != null;
-            icon.sprite = plantSprite;
+            var slot = h.GetComponent<DropSlot>();
+            if (slot != null && !slot.isOccupied) { target = slot; break; }
         }
 
-        if (priceText != null)
-            priceText.text = price.ToString();
+        if (target != null)
+        {
+            // Place and lock into the tile
+            draggingPlant.transform.position = target.transform.position;
+            target.isOccupied = true;
+
+            // restore look + colliders
+            var sr = draggingPlant.GetComponentInChildren<SpriteRenderer>();
+            if (sr) sr.color = Color.white;
+            SetAllCollidersEnabled(draggingPlant, true);
+
+            // stop any "move again" scripts
+            var oldDrag = draggingPlant.GetComponent<Draggable>();
+            if (oldDrag) oldDrag.enabled = false;
+
+            // enable shooter NOW that we are placed
+            var shooter = draggingPlant.GetComponentInChildren<ShooterPlant>(true);
+            if (shooter) shooter.enabled = true;
+
+            // spend sun after a valid placement
+            GameManager.instance.SpendSun(price);
+
+            // clear handle
+            draggingPlant = null;
+        }
+        else
+        {
+            // Invalid drop → delete ghost
+            Destroy(draggingPlant);
+            draggingPlant = null;
+        }
+    }
+
+    Vector3 MouseWorld()
+    {
+        var mp = Input.mousePosition;
+        mp.z = 0f; // orthographic
+        var w = cam.ScreenToWorldPoint(mp);
+        w.z = 0f;
+        return w;
+    }
+
+    void SetAllCollidersEnabled(GameObject go, bool enabled)
+    {
+        foreach (var c in go.GetComponentsInChildren<Collider2D>(true))
+            c.enabled = enabled;
     }
 }
