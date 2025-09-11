@@ -20,6 +20,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.isTrigger) return;  // ignore sensors
         var z = other.GetComponent<Zombie>();
         if (z != null)
         {
