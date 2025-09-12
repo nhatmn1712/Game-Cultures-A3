@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc80150c5b8c1c145bb6b554cf195152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Zombie
-  speed: 1.5
+  speed: 1
   health: 5
   biteDamage: 1
   biteInterval: 1
