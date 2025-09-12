@@ -8,7 +8,7 @@ public class PlantSlot : MonoBehaviour,
 {
     [Header("Card Data")]
     public Sprite plantSprite;
-    public GameObject plantPrefab;        // your dreamcatcher/peashooter prefab
+    public GameObject plantPrefab;        // your plant prefab
     public int price = 0;
 
     [Header("Card UI")]
@@ -26,7 +26,7 @@ public class PlantSlot : MonoBehaviour,
         if (icon) { icon.enabled = plantSprite != null; icon.sprite = plantSprite; }
         if (priceText) priceText.text = price.ToString();
 
-        // If this object also has a Button, clear onClick to avoid conflicts with drag:
+        // If this object also has a Button, clear onClick to avoid conflicts with drag
         var btn = GetComponent<Button>();
         if (btn) btn.onClick.RemoveAllListeners();
     }
@@ -37,15 +37,15 @@ public class PlantSlot : MonoBehaviour,
         if (!GameManager.instance || !GameManager.instance.CanAfford(price))
             return;
 
-        // Spawn ONE ghost copy to drag
+        // Spawn ghost copy to drag
         draggingPlant = Instantiate(plantPrefab, MouseWorld(), Quaternion.identity);
 
-        // ghost look + disable colliders while dragging
+        // ghost look + disable colliders
         var sr = draggingPlant.GetComponentInChildren<SpriteRenderer>();
         if (sr) sr.color = Ghost;
         SetAllCollidersEnabled(draggingPlant, false);
 
-        // keep the unit passive while dragging (disable shooter)
+        // keep passive while dragging
         var shooter = draggingPlant.GetComponentInChildren<ShooterPlant>(true);
         if (shooter) shooter.enabled = false;
     }
@@ -74,27 +74,26 @@ public class PlantSlot : MonoBehaviour,
 
         if (target != null)
         {
-            // Place and lock into the tile
+            // Place and lock into the slot
             draggingPlant.transform.position = target.transform.position;
-            target.isOccupied = true;
+            target.PlacePlant(draggingPlant);   // <<<< this handles freeing when destroyed
 
             // restore look + colliders
             var sr = draggingPlant.GetComponentInChildren<SpriteRenderer>();
             if (sr) sr.color = Color.white;
             SetAllCollidersEnabled(draggingPlant, true);
 
-            // stop any "move again" scripts
+            // disable dragging
             var oldDrag = draggingPlant.GetComponent<Draggable>();
             if (oldDrag) oldDrag.enabled = false;
 
-            // enable shooter NOW that we are placed
+            // enable shooter
             var shooter = draggingPlant.GetComponentInChildren<ShooterPlant>(true);
             if (shooter) shooter.enabled = true;
 
-            // spend sun after a valid placement
+            // spend sun
             GameManager.instance.SpendSun(price);
 
-            // clear handle
             draggingPlant = null;
         }
         else

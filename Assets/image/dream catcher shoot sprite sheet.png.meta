@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: ce637c971f387824082ef7daabcaaa6d
+guid: 207c7e44084ceef4a81eb8ff8e27f2eb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7806976050856398930
-    second: Enemy 2_0
+      213: 4391688933311158215
+    second: dream catcher shoot sprite sheet_0
   - first:
-      213: -5620556579119131400
-    second: Enemy 2_1
+      213: -1986343492451004000
+    second: dream catcher shoot sprite sheet_1
   - first:
-      213: -7887481178748576459
-    second: Enemy 2_2
+      213: 7954486888785626974
+    second: dream catcher shoot sprite sheet_2
   - first:
-      213: 7279241670917311338
-    second: Enemy 2_3
+      213: 6218697477647920637
+    second: dream catcher shoot sprite sheet_3
+  - first:
+      213: -9157898136566685494
+    second: dream catcher shoot sprite sheet_4
+  - first:
+      213: 4736701077964355037
+    second: dream catcher shoot sprite sheet_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -60,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy 2_0
+      name: dream catcher shoot sprite sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3
-        width: 63
-        height: 43
+        x: 49
+        y: 19
+        width: 222
+        height: 352
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2501749ea53f75c60800000000000000
-      internalID: 7806976050856398930
+      spriteID: 7c7960211d962fc30800000000000000
+      internalID: 4391688933311158215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy 2_1
+      name: dream catcher shoot sprite sheet_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 3
-        width: 64
-        height: 42
+        x: 366
+        y: 19
+        width: 222
+        height: 352
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8f49e9df195cff1b0800000000000000
-      internalID: -5620556579119131400
+      spriteID: 0a19c822e171f64e0800000000000000
+      internalID: -1986343492451004000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy 2_2
+      name: dream catcher shoot sprite sheet_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 3
-        width: 64
-        height: 42
+        x: 686
+        y: 19
+        width: 226
+        height: 352
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 53d9c1858a90a8290800000000000000
-      internalID: -7887481178748576459
+      spriteID: e57c1904ea3046e60800000000000000
+      internalID: 7954486888785626974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy 2_3
+      name: dream catcher shoot sprite sheet_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 3
-        width: 64
-        height: 42
+        x: 1009
+        y: 19
+        width: 222
+        height: 352
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,8 +196,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a6b4f3d8bbf050560800000000000000
-      internalID: 7279241670917311338
+      spriteID: dfd62d868604d4650800000000000000
+      internalID: 6218697477647920637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher shoot sprite sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 19
+        width: 222
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac02bb85a2c98e080800000000000000
+      internalID: -9157898136566685494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher shoot sprite sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 19
+        width: 234
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd57647c8842cb140800000000000000
+      internalID: 4736701077964355037
       vertices: []
       indices: 
       edges: []
@@ -210,10 +260,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Enemy 2_0: 7806976050856398930
-      Enemy 2_1: -5620556579119131400
-      Enemy 2_2: -7887481178748576459
-      Enemy 2_3: 7279241670917311338
+      dream catcher shoot sprite sheet_0: 4391688933311158215
+      dream catcher shoot sprite sheet_1: -1986343492451004000
+      dream catcher shoot sprite sheet_2: 7954486888785626974
+      dream catcher shoot sprite sheet_3: 6218697477647920637
+      dream catcher shoot sprite sheet_4: -9157898136566685494
+      dream catcher shoot sprite sheet_5: 4736701077964355037
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
