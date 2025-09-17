@@ -1038,9 +1038,9 @@ PlayableDirector:
   - key: {fileID: -6024739726942189439, guid: 7433532102081e74c99b113fa4be6429, type: 2}
     value: {fileID: 1715994820}
   - key: {fileID: 7599208067805968881, guid: 7433532102081e74c99b113fa4be6429, type: 2}
-    value: {fileID: 1844667339}
+    value: {fileID: 1000963403}
   - key: {fileID: 964073527774316356, guid: 7433532102081e74c99b113fa4be6429, type: 2}
-    value: {fileID: 1385994667}
+    value: {fileID: 2137692031}
   - key: {fileID: -938435815734745039, guid: 7433532102081e74c99b113fa4be6429, type: 2}
     value: {fileID: 282365348}
   - key: {fileID: -3550945414271993909, guid: 7433532102081e74c99b113fa4be6429, type: 2}
@@ -1121,7 +1121,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: What does it do
+  m_text: How can this protect me ?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2063,8 +2063,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Its a scared relic in which here you can see web catches nightmares so
-    they fade with the dawn.
+  m_text: "Good dreams pass through the holes and drift down to you, the bad one
+    get stuck by the web and fade by dawn. I\u2019ll hang it by the window."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
