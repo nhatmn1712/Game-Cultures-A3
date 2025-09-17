@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 407149395887576593}
   - component: {fileID: -5905373686192235679}
   - component: {fileID: -8735934147531595435}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sun_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SunFall
   dropOffsetY: 2
-  fallSpeed: 1
+  fallSpeed: 0.5
   lifetime: 5
   collectTarget: {fileID: 0}
   collectSpeed: 10

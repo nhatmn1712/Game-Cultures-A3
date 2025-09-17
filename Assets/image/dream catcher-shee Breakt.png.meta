@@ -1,0 +1,579 @@
+fileFormatVersion: 2
+guid: fec7c052e5107b4429a7aa4f4e9208f1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5070772082059052583
+    second: dream catcher-shee Breakt_0
+  - first:
+      213: -1739029088178694613
+    second: dream catcher-shee Breakt_1
+  - first:
+      213: 4078406113196625741
+    second: dream catcher-shee Breakt_2
+  - first:
+      213: 5055484816651210200
+    second: dream catcher-shee Breakt_3
+  - first:
+      213: 2611570363094010979
+    second: dream catcher-shee Breakt_4
+  - first:
+      213: -8337985774211489265
+    second: dream catcher-shee Breakt_5
+  - first:
+      213: -7228224697942390268
+    second: dream catcher-shee Breakt_6
+  - first:
+      213: 4308331573956473277
+    second: dream catcher-shee Breakt_7
+  - first:
+      213: 1932838067808225269
+    second: dream catcher-shee Breakt_8
+  - first:
+      213: -2205623479567863923
+    second: dream catcher-shee Breakt_9
+  - first:
+      213: 2614897939160102021
+    second: dream catcher-shee Breakt_10
+  - first:
+      213: -5379731393190688899
+    second: dream catcher-shee Breakt_11
+  - first:
+      213: -5822106892124937621
+    second: dream catcher-shee Breakt_12
+  - first:
+      213: 7815522551065240981
+    second: dream catcher-shee Breakt_13
+  - first:
+      213: -2589365276180753238
+    second: dream catcher-shee Breakt_14
+  - first:
+      213: 7213343607774672537
+    second: dream catcher-shee Breakt_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 45
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 2
+        width: 57
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d9f6ef48aff0a9b0800000000000000
+      internalID: -5070772082059052583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_1
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 2
+        width: 57
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b269901124abdd7e0800000000000000
+      internalID: -1739029088178694613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_2
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 120
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4fcdda60c8699830800000000000000
+      internalID: 4078406113196625741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_3
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 119
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dd40e7d7a0b82640800000000000000
+      internalID: 5055484816651210200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_4
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 124
+        width: 7
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36c082698692e3420800000000000000
+      internalID: 2611570363094010979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_5
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 124
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f022dd96d16894c80800000000000000
+      internalID: -8337985774211489265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_6
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 80
+        width: 67
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40a407a1fef20bb90800000000000000
+      internalID: -7228224697942390268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_7
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 91
+        width: 20
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db176407db44acb30800000000000000
+      internalID: 4308331573956473277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_8
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 97
+        width: 25
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f7cf086bf1d2da10800000000000000
+      internalID: 1932838067808225269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_9
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 58
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8fa818912d0461e0800000000000000
+      internalID: -2205623479567863923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_10
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 43
+        width: 65
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 584f98342dbf94420800000000000000
+      internalID: 2614897939160102021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_11
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 60
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d770ad90dca5755b0800000000000000
+      internalID: -5379731393190688899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_12
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 14
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b622a82e0a8b33fa0800000000000000
+      internalID: -5822106892124937621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_13
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 36
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5956c4e0a50567c60800000000000000
+      internalID: 7815522551065240981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_14
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 8
+        width: 18
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa4d387100ab01cd0800000000000000
+      internalID: -2589365276180753238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_15
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 2
+        width: 14
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9967e381bc1fa1460800000000000000
+      internalID: 7213343607774672537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_16
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 127
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4149c37a26d1874f99171c391c71213
+      internalID: -270341900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dream catcher-shee Breakt_17
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 0
+        width: 79
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a8f0e70047e744fadb2cde813093fb
+      internalID: 1804799722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 56e3bdaac5c523f4fbf6ff0ba163892e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      dream catcher-shee Breakt_0: -5070772082059052583
+      dream catcher-shee Breakt_1: -1739029088178694613
+      dream catcher-shee Breakt_10: 2614897939160102021
+      dream catcher-shee Breakt_11: -5379731393190688899
+      dream catcher-shee Breakt_12: -5822106892124937621
+      dream catcher-shee Breakt_13: 7815522551065240981
+      dream catcher-shee Breakt_14: -2589365276180753238
+      dream catcher-shee Breakt_15: 7213343607774672537
+      dream catcher-shee Breakt_16: -270341900
+      dream catcher-shee Breakt_17: 1804799722
+      dream catcher-shee Breakt_2: 4078406113196625741
+      dream catcher-shee Breakt_3: 5055484816651210200
+      dream catcher-shee Breakt_4: 2611570363094010979
+      dream catcher-shee Breakt_5: -8337985774211489265
+      dream catcher-shee Breakt_6: -7228224697942390268
+      dream catcher-shee Breakt_7: 4308331573956473277
+      dream catcher-shee Breakt_8: 1932838067808225269
+      dream catcher-shee Breakt_9: -2205623479567863923
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
