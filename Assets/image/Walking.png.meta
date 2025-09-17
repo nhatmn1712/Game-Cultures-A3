@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 8d68cfe6081b0674e9dde8f2272266d0
+guid: 03ae617a5742e6f40854182d9633f3bb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2670164986882087280
-    second: Grandma_0
+      213: 3577252072171977909
+    second: Walking_0
   - first:
-      213: 4214085533123574540
-    second: Grandma_1
+      213: -8287159642771018103
+    second: Walking_1
+  - first:
+      213: -899620374153902453
+    second: Walking_2
+  - first:
+      213: -1539013491861331121
+    second: Walking_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10
+  spritePixelsToUnits: 15
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,11 +109,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grandma_0
+      name: Walking_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 0
+        x: 5
+        y: 4
         width: 36
         height: 72
       alignment: 0
@@ -118,18 +124,62 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 079dace88e45e0520800000000000000
-      internalID: 2670164986882087280
+      spriteID: 5bc37d97ec3f4a130800000000000000
+      internalID: 3577252072171977909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grandma_1
+      name: Walking_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
+        x: 50
+        y: 4
+        width: 35
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98e2eaf46381efc80800000000000000
+      internalID: -8287159642771018103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_2
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 4
+        width: 36
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b864add3908e383f0800000000000000
+      internalID: -899620374153902453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walking_3
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 4
         width: 36
         height: 72
       alignment: 0
@@ -140,8 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0b71f617707b7a30800000000000000
-      internalID: 4214085533123574540
+      spriteID: f436219126354aae0800000000000000
+      internalID: -1539013491861331121
       vertices: []
       indices: 
       edges: []
@@ -160,8 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Grandma_0: 2670164986882087280
-      Grandma_1: 4214085533123574540
+      Walking_0: 3577252072171977909
+      Walking_1: -8287159642771018103
+      Walking_2: -899620374153902453
+      Walking_3: -1539013491861331121
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

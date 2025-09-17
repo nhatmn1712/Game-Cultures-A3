@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 8d68cfe6081b0674e9dde8f2272266d0
+guid: 427cfa7ff9b928d478642ffcfc17eda1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2670164986882087280
-    second: Grandma_0
-  - first:
-      213: 4214085533123574540
-    second: Grandma_1
+      213: 6732062350558528555
+    second: BackGround1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grandma_0
+      name: BackGround1_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 0
         y: 0
-        width: 36
-        height: 72
+        width: 280
+        height: 212
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 079dace88e45e0520800000000000000
-      internalID: 2670164986882087280
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Grandma_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 36
-        height: 72
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c0b71f617707b7a30800000000000000
-      internalID: 4214085533123574540
+      spriteID: b2482d23a071d6d50800000000000000
+      internalID: 6732062350558528555
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Grandma_0: 2670164986882087280
-      Grandma_1: 4214085533123574540
+      BackGround1_0: 6732062350558528555
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
