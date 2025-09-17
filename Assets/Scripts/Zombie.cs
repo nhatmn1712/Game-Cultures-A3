@@ -32,11 +32,17 @@ public class Zombie : MonoBehaviour
         }
     }
 
+
     public void TakeDamage(int amount)
     {
         health -= amount;
-        if (health <= 0) Destroy(gameObject);
+        if (health <= 0)
+        {
+            if (WinManager.Instance != null) WinManager.Instance.RegisterKill();
+            Destroy(gameObject);
+        }
     }
+
 
     // ---- Trigger area in front of the zombie ----
     private void OnTriggerEnter2D(Collider2D other)

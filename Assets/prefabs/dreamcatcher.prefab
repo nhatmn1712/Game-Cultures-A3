@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1003927578100116665}
   - component: {fileID: 6782325107195545477}
-  - component: {fileID: -24208120652482280}
   - component: {fileID: -6282280516573506030}
   - component: {fileID: -2066749938674856646}
   - component: {fileID: 6521957499490065040}
@@ -98,18 +97,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-24208120652482280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4290421323574047316}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63d46665b65266843b9ee7a437b5911f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Draggable
 --- !u!61 &-6282280516573506030
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,12 +150,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4290421323574047316}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0be18e4b6f9c841419991402ba7e3cee, type: 3}
+  m_Script: {fileID: 11500000, guid: 63d46665b65266843b9ee7a437b5911f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardDraggable
-  unitPrefab: {fileID: 4290421323574047316}
 --- !u!114 &6521957499490065040
 MonoBehaviour:
   m_ObjectHideFlags: 0
