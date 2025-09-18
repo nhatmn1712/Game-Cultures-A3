@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShooterPlant
   bulletPrefab: {fileID: 905817674250727525, guid: afa4e2a7dfc67f8469fc8d9ccb68e65f, type: 3}
   muzzle: {fileID: 5209310304716362795}
-  fireRate: 2
+  fireRate: 1.9
   scanInterval: 0.56
   rowTolerance: 0.69
   lookAheadDistance: 51.5

@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Zombie
   speed: 1
-  health: 5
+  health: 10
   biteDamage: 1
   biteInterval: 1
 --- !u!50 &2474828828472365888
