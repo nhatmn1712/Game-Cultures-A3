@@ -573,7 +573,6 @@ GameObject:
   - component: {fileID: 282365350}
   - component: {fileID: 282365349}
   - component: {fileID: 282365351}
-  - component: {fileID: 282365352}
   m_Layer: 0
   m_Name: Grandma_0
   m_TagString: Player
@@ -664,7 +663,7 @@ Animator:
   m_GameObject: {fileID: 282365348}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6a49546e2752425429e088109664f8a5, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -676,22 +675,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!111 &282365352
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 282365348}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: f04534ccc886a6243b96901dd03759d8, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!1 &293623222
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,6 +1030,8 @@ PlayableDirector:
     value: {fileID: 1654673314}
   - key: {fileID: -4791385331505794146, guid: 7433532102081e74c99b113fa4be6429, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 2913479999406040382, guid: 7433532102081e74c99b113fa4be6429, type: 2}
+    value: {fileID: 282365351}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &990091014
