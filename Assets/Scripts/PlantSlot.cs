@@ -8,7 +8,7 @@ public class PlantSlot : MonoBehaviour,
 {
     [Header("Card Data")]
     public Sprite plantSprite;
-    public GameObject plantPrefab;        // your plant prefab
+    public GameObject plantPrefab;        // the plant prefab to place
     public int price = 0;
 
     [Header("Card UI")]
@@ -33,24 +33,23 @@ public class PlantSlot : MonoBehaviour,
 
     public void OnPointerDown(PointerEventData _)
     {
-        // Only start if we can afford
-        if (!GameManager.instance || !GameManager.instance.CanAfford(price))
-            return;
+        // only start if we can afford
+        if (!GameManager.Instance || !GameManager.Instance.CanAfford(price)) return;
 
-        // Spawn ghost copy to drag
+        // spawn ghost copy to drag (do NOT spend yet)
         draggingPlant = Instantiate(plantPrefab, MouseWorld(), Quaternion.identity);
 
-        // ghost look + disable colliders
+        // ghost look + disable colliders while dragging
         var sr = draggingPlant.GetComponentInChildren<SpriteRenderer>();
         if (sr) sr.color = Ghost;
         SetAllCollidersEnabled(draggingPlant, false);
 
-        // keep passive while dragging
+        // keep passive while dragging (e.g. shooter disabled)
         var shooter = draggingPlant.GetComponentInChildren<ShooterPlant>(true);
         if (shooter) shooter.enabled = false;
     }
 
-    public void OnBeginDrag(PointerEventData _) { /* nothing needed */ }
+    public void OnBeginDrag(PointerEventData _) { /* not used */ }
 
     public void OnDrag(PointerEventData _)
     {
@@ -61,7 +60,7 @@ public class PlantSlot : MonoBehaviour,
     {
         if (!draggingPlant) return;
 
-        // Look for a free DropSlot under the mouse
+        // look for a free DropSlot under the mouse
         Vector2 p = MouseWorld();
         var hits = Physics2D.OverlapPointAll(p);
 
@@ -74,31 +73,31 @@ public class PlantSlot : MonoBehaviour,
 
         if (target != null)
         {
-            // Place and lock into the slot
+            // place and lock into the slot
             draggingPlant.transform.position = target.transform.position;
-            target.PlacePlant(draggingPlant);   // <<<< this handles freeing when destroyed
+            target.PlacePlant(draggingPlant);
 
             // restore look + colliders
             var sr = draggingPlant.GetComponentInChildren<SpriteRenderer>();
             if (sr) sr.color = Color.white;
             SetAllCollidersEnabled(draggingPlant, true);
 
-            // disable dragging
+            // disable any drag script on the placed plant
             var oldDrag = draggingPlant.GetComponent<Draggable>();
             if (oldDrag) oldDrag.enabled = false;
 
-            // enable shooter
+            // enable shooter/behaviour after placement
             var shooter = draggingPlant.GetComponentInChildren<ShooterPlant>(true);
             if (shooter) shooter.enabled = true;
 
-            // spend sun
-            GameManager.instance.SpendSun(price);
+            // NOW spend sun (only after successful placement)
+            if (GameManager.Instance) GameManager.Instance.SpendSun(price);
 
             draggingPlant = null;
         }
         else
         {
-            // Invalid drop → delete ghost
+            // invalid drop → delete the ghost and do not spend
             Destroy(draggingPlant);
             draggingPlant = null;
         }
@@ -107,7 +106,7 @@ public class PlantSlot : MonoBehaviour,
     Vector3 MouseWorld()
     {
         var mp = Input.mousePosition;
-        mp.z = 0f; // orthographic
+        mp.z = 0f; // orthographic cam
         var w = cam.ScreenToWorldPoint(mp);
         w.z = 0f;
         return w;

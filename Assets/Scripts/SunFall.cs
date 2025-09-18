@@ -52,7 +52,7 @@ public class SunFall : MonoBehaviour
 
             if (Vector3.Distance(transform.position, collectTarget.position) < 0.05f)
             {
-                GameManager.instance.AddSun(reward);
+                GameManager.Instance.AddSun(reward);
                 Destroy(gameObject);
             }
         }

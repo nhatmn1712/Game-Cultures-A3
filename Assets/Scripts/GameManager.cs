@@ -3,47 +3,45 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager Instance { get; private set; }
 
     [Header("Sun")]
-    [Min(0)]
-    public int sunPoints = 5;                       // starting sun
-    [SerializeField] private TextMeshProUGUI sunText; // drag your TMP text here
+    [SerializeField] private int startingSun = 4;          // << set your start here
+    [SerializeField] private TextMeshProUGUI sunText;
 
-    private void Awake()
+    public int SunPoints { get; private set; }
+
+    void Awake()
     {
-        if (instance == null) instance = this;
-        else { Destroy(gameObject); return; }
+        // Singleton (no duplicates)
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        Instance = this;
 
+        // Make sure the game is unfrozen whenever this scene loads
+        Time.timeScale = 1f;
+
+        // Initialize sun & UI
+        SunPoints = startingSun;
         UpdateSunUI();
     }
 
-    // --- used by PlantSlot / others ---
-    public bool CanAfford(int cost) => sunPoints >= cost;
+    public bool CanAfford(int cost) => SunPoints >= cost;
 
     public void SpendSun(int cost)
     {
-        if (cost <= 0) return;
-        sunPoints = Mathf.Max(0, sunPoints - cost);
+        SunPoints -= cost;
         UpdateSunUI();
     }
 
     public void AddSun(int amount)
     {
-        if (amount <= 0) return;
-        sunPoints += amount;
-        UpdateSunUI();
-    }
-
-    // optional helper if you want to assign the label from code
-    public void SetSunText(TextMeshProUGUI t)
-    {
-        sunText = t;
+        SunPoints += amount;
         UpdateSunUI();
     }
 
     private void UpdateSunUI()
     {
-        if (sunText) sunText.text = sunPoints.ToString();
+        if (sunText != null) sunText.text = SunPoints.ToString();
     }
 }
+
