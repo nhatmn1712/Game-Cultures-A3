@@ -6,7 +6,7 @@ public class WinManager : MonoBehaviour
     public static WinManager Instance;
 
     [Header("Win Condition")]
-    public int targetKills = 40;      // set this to 40, or auto from spawner
+    public int targetKills = 40;
     public int currentKills = 0;
 
     [Tooltip("Optional: drag the ZombieSpawn here to auto-read totalToSpawn")]
@@ -14,13 +14,23 @@ public class WinManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
-        else { Destroy(gameObject); }
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+
+            // Subscribe to sceneLoaded event
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Start()
     {
-        if (spawner) targetKills = spawner.totalToSpawn;   // auto = number you plan to spawn
+        if (spawner) targetKills = spawner.totalToSpawn;
     }
 
     public void RegisterKill()
@@ -30,9 +40,17 @@ public class WinManager : MonoBehaviour
 
         if (currentKills >= targetKills)
         {
-            // Safer by name if your build order ever changes:
-            // SceneManager.LoadScene("Victoryyyy");
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene("Victoryyyy"); // safer by name
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Chuong test")
+        {
+            // Reset values every time Chuong test reloads
+            currentKills = 0;
+            if (spawner) targetKills = spawner.totalToSpawn;
         }
     }
 }

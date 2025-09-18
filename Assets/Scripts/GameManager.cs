@@ -4,88 +4,65 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static GameManager Instance;
 
-    [Header("Sun")]
-    [SerializeField] int startingSun = 4;      // change default here
-    [SerializeField] TextMeshProUGUI sunText;  // optional drag, will auto-find if empty
-    public int SunPoints { get; private set; }
+    [Header("Sun System")]
+    public int sunCount = 5;                 // default starting sun
+    public TextMeshProUGUI sunText;          // UI reference
 
     void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);   // prevent duplicates
-            return;
-        }
+        // Singleton pattern
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        SunPoints = startingSun;
+        // Rebind UI after each scene load
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    void OnDestroy()
+    private void OnDestroy()
     {
-        if (Instance == this)
-            SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    // Called every time a scene finishes loading
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // make sure the game isn’t paused after a retry
-        Time.timeScale = 1f;
+        // Reset sun count to 5 when a new scene is loaded
+        sunCount = 5;
 
-        // re-acquire the SunText from the freshly loaded scene if needed
+        // Try to find the new SunText object in the new scene
         if (sunText == null)
         {
-            // Option A: by tag (recommended)
-            // Ensure your TMP text object is tagged "SunText"
-            var tagged = GameObject.FindGameObjectWithTag("SunText");
-            if (tagged) sunText = tagged.GetComponent<TextMeshProUGUI>();
-
-            // Option B: fallback by name search if tag not set
-            if (sunText == null)
-            {
-                foreach (var tmp in FindObjectsOfType<TextMeshProUGUI>(true))
-                {
-                    if (tmp.name == "SunText")
-                    {
-                        sunText = tmp;
-                        break;
-                    }
-                }
-            }
+            GameObject textObj = GameObject.FindWithTag("SunText");
+            if (textObj != null)
+                sunText = textObj.GetComponent<TextMeshProUGUI>();
         }
 
-        UpdateSunUI();
-    }
-
-    // ------- API used by other scripts -------
-    public bool CanAfford(int cost) => SunPoints >= cost;
-
-    public void SpendSun(int cost)
-    {
-        SunPoints -= cost;
         UpdateSunUI();
     }
 
     public void AddSun(int amount)
     {
-        SunPoints += amount;
+        sunCount += amount;
         UpdateSunUI();
     }
-    // ----------------------------------------
+
+    public void SpendSun(int amount)
+    {
+        sunCount -= amount;
+        UpdateSunUI();
+    }
+
+    public bool CanAfford(int price)
+    {
+        return sunCount >= price;
+    }
 
     void UpdateSunUI()
     {
-        if (sunText) sunText.text = SunPoints.ToString();
-    }
-
-    // Optional: allow a UI script to register explicitly
-    public void RegisterSunText(TextMeshProUGUI t)
-    {
-        sunText = t;
-        UpdateSunUI();
+        if (sunText != null)
+            sunText.text = sunCount.ToString();
     }
 }

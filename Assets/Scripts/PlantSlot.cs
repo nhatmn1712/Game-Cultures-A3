@@ -8,7 +8,7 @@ public class PlantSlot : MonoBehaviour,
 {
     [Header("Card Data")]
     public Sprite plantSprite;
-    public GameObject plantPrefab;        // the plant prefab to place
+    public GameObject placedPrefab;       // ✅ this is the placed plant (no drag logic)
     public int price = 0;
 
     [Header("Card UI")]
@@ -16,7 +16,7 @@ public class PlantSlot : MonoBehaviour,
     public TextMeshProUGUI priceText;
 
     private Camera cam;
-    private GameObject draggingPlant;
+    private GameObject draggingGhost;     // ghost copy to drag
     private static readonly Color Ghost = new Color(1f, 1f, 1f, 0.6f);
 
     void Awake()
@@ -26,41 +26,38 @@ public class PlantSlot : MonoBehaviour,
         if (icon) { icon.enabled = plantSprite != null; icon.sprite = plantSprite; }
         if (priceText) priceText.text = price.ToString();
 
-        // If this object also has a Button, clear onClick to avoid conflicts with drag
         var btn = GetComponent<Button>();
         if (btn) btn.onClick.RemoveAllListeners();
     }
 
     public void OnPointerDown(PointerEventData _)
     {
-        // only start if we can afford
         if (!GameManager.Instance || !GameManager.Instance.CanAfford(price)) return;
 
-        // spawn ghost copy to drag (do NOT spend yet)
-        draggingPlant = Instantiate(plantPrefab, MouseWorld(), Quaternion.identity);
+        // make a ghost (copy of placedPrefab) to drag
+        draggingGhost = Instantiate(placedPrefab, MouseWorld(), Quaternion.identity);
 
-        // ghost look + disable colliders while dragging
-        var sr = draggingPlant.GetComponentInChildren<SpriteRenderer>();
+        // ghost look
+        var sr = draggingGhost.GetComponentInChildren<SpriteRenderer>();
         if (sr) sr.color = Ghost;
-        SetAllCollidersEnabled(draggingPlant, false);
 
-        // keep passive while dragging (e.g. shooter disabled)
-        var shooter = draggingPlant.GetComponentInChildren<ShooterPlant>(true);
+        // disable gameplay while dragging
+        SetAllCollidersEnabled(draggingGhost, false);
+        var shooter = draggingGhost.GetComponentInChildren<ShooterPlant>(true);
         if (shooter) shooter.enabled = false;
     }
 
-    public void OnBeginDrag(PointerEventData _) { /* not used */ }
+    public void OnBeginDrag(PointerEventData _) { }
 
     public void OnDrag(PointerEventData _)
     {
-        if (draggingPlant) draggingPlant.transform.position = MouseWorld();
+        if (draggingGhost) draggingGhost.transform.position = MouseWorld();
     }
 
     public void OnEndDrag(PointerEventData _)
     {
-        if (!draggingPlant) return;
+        if (!draggingGhost) return;
 
-        // look for a free DropSlot under the mouse
         Vector2 p = MouseWorld();
         var hits = Physics2D.OverlapPointAll(p);
 
@@ -73,40 +70,28 @@ public class PlantSlot : MonoBehaviour,
 
         if (target != null)
         {
-            // place and lock into the slot
-            draggingPlant.transform.position = target.transform.position;
-            target.PlacePlant(draggingPlant);
+            // place real prefab (not ghost) in the slot
+            GameObject placedPlant = Instantiate(placedPrefab, target.transform.position, Quaternion.identity);
+            target.PlacePlant(placedPlant);
 
-            // restore look + colliders
-            var sr = draggingPlant.GetComponentInChildren<SpriteRenderer>();
-            if (sr) sr.color = Color.white;
-            SetAllCollidersEnabled(draggingPlant, true);
-
-            // disable any drag script on the placed plant
-            var oldDrag = draggingPlant.GetComponent<Draggable>();
-            if (oldDrag) oldDrag.enabled = false;
-
-            // enable shooter/behaviour after placement
-            var shooter = draggingPlant.GetComponentInChildren<ShooterPlant>(true);
+            // enable gameplay
+            var shooter = placedPlant.GetComponentInChildren<ShooterPlant>(true);
             if (shooter) shooter.enabled = true;
 
-            // NOW spend sun (only after successful placement)
-            if (GameManager.Instance) GameManager.Instance.SpendSun(price);
+            SetAllCollidersEnabled(placedPlant, true);
 
-            draggingPlant = null;
+            if (GameManager.Instance) GameManager.Instance.SpendSun(price);
         }
-        else
-        {
-            // invalid drop → delete the ghost and do not spend
-            Destroy(draggingPlant);
-            draggingPlant = null;
-        }
+
+        // always destroy the ghost
+        Destroy(draggingGhost);
+        draggingGhost = null;
     }
 
     Vector3 MouseWorld()
     {
         var mp = Input.mousePosition;
-        mp.z = 0f; // orthographic cam
+        mp.z = 0f;
         var w = cam.ScreenToWorldPoint(mp);
         w.z = 0f;
         return w;
