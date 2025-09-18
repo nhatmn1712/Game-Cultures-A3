@@ -1,10 +1,31 @@
 fileFormatVersion: 2
-guid: b10451308d094e5469378d5dda002ece
+guid: 5dd12c0c2763e9e4b8ed8eadea092c13
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 981394448071144779
-    second: rattle toy_0
+      213: 4981687205440276836
+    second: Sprite-0001-sheet_0
+  - first:
+      213: -115708577067447641
+    second: Sprite-0001-sheet_1
+  - first:
+      213: 9123362125638863167
+    second: Sprite-0001-sheet_2
+  - first:
+      213: -1154123325809941305
+    second: Sprite-0001-sheet_3
+  - first:
+      213: 2449011385570088014
+    second: Sprite-0001-sheet_4
+  - first:
+      213: 669389507159526922
+    second: Sprite-0001-sheet_5
+  - first:
+      213: -5855944241575646189
+    second: Sprite-0001-sheet_6
+  - first:
+      213: -1010655721583900556
+    second: Sprite-0001-sheet_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 70
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,53 +117,71 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rattle toy_0
+      name: Sprite-0001-sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 34
-        height: 18
+        width: 41
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b4532d50d0d9e9d00800000000000000
-      internalID: 981394448071144779
+      spriteID: a928c6a2b82f7c64580499dba8369fad
+      internalID: 4981687205440276836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite-0001-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 2
+        width: 42
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68097ee8f9138e4db73dd8c7f6562ad
+      internalID: 9123362125638863167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sprite-0001-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 2
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fbfe0e6c6e46004d8a9119a4a42d64d
+      internalID: 2449011385570088014
       vertices: []
       indices: 
       edges: []
@@ -151,7 +190,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 975bf175eda7e0042b1b1fcbdd56d9e2
     internalID: 0
     vertices: []
     indices: 
@@ -159,9 +198,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      rattle toy_0: 981394448071144779
+      Sprite-0001-sheet_0: 4981687205440276836
+      Sprite-0001-sheet_1: -1863223237
+      Sprite-0001-sheet_2: 9123362125638863167
+      Sprite-0001-sheet_3: 200309609
+      Sprite-0001-sheet_4: 2449011385570088014
+      Sprite-0001-sheet_5: 1657367780
+      Sprite-0001-sheet_6: -176491000
+      Sprite-0001-sheet_7: 1260913944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
