@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -6,25 +7,61 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [Header("Sun")]
-    [SerializeField] private int startingSun = 4;          // << set your start here
-    [SerializeField] private TextMeshProUGUI sunText;
-
+    [SerializeField] int startingSun = 4;      // change default here
+    [SerializeField] TextMeshProUGUI sunText;  // optional drag, will auto-find if empty
     public int SunPoints { get; private set; }
 
     void Awake()
     {
-        // Singleton (no duplicates)
-        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);   // prevent duplicates
+            return;
+        }
         Instance = this;
+        DontDestroyOnLoad(gameObject);
 
-        // Make sure the game is unfrozen whenever this scene loads
+        SunPoints = startingSun;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDestroy()
+    {
+        if (Instance == this)
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // make sure the game isn’t paused after a retry
         Time.timeScale = 1f;
 
-        // Initialize sun & UI
-        SunPoints = startingSun;
+        // re-acquire the SunText from the freshly loaded scene if needed
+        if (sunText == null)
+        {
+            // Option A: by tag (recommended)
+            // Ensure your TMP text object is tagged "SunText"
+            var tagged = GameObject.FindGameObjectWithTag("SunText");
+            if (tagged) sunText = tagged.GetComponent<TextMeshProUGUI>();
+
+            // Option B: fallback by name search if tag not set
+            if (sunText == null)
+            {
+                foreach (var tmp in FindObjectsOfType<TextMeshProUGUI>(true))
+                {
+                    if (tmp.name == "SunText")
+                    {
+                        sunText = tmp;
+                        break;
+                    }
+                }
+            }
+        }
+
         UpdateSunUI();
     }
 
+    // ------- API used by other scripts -------
     public bool CanAfford(int cost) => SunPoints >= cost;
 
     public void SpendSun(int cost)
@@ -38,10 +75,17 @@ public class GameManager : MonoBehaviour
         SunPoints += amount;
         UpdateSunUI();
     }
+    // ----------------------------------------
 
-    private void UpdateSunUI()
+    void UpdateSunUI()
     {
-        if (sunText != null) sunText.text = SunPoints.ToString();
+        if (sunText) sunText.text = SunPoints.ToString();
+    }
+
+    // Optional: allow a UI script to register explicitly
+    public void RegisterSunText(TextMeshProUGUI t)
+    {
+        sunText = t;
+        UpdateSunUI();
     }
 }
-

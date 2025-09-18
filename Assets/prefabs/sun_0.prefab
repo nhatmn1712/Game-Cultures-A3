@@ -109,7 +109,7 @@ MonoBehaviour:
   lifetime: 5
   collectTarget: {fileID: 0}
   collectSpeed: 10
-  reward: 1
+  reward: 2
 --- !u!61 &-8735934147531595435
 BoxCollider2D:
   m_ObjectHideFlags: 0
