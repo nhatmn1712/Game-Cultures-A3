@@ -540,7 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90b2a4fd8e97bf42a317ef43bfdacbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WinManager
-  targetKills: 69
+  targetKills: 40
   currentKills: 0
   spawner: {fileID: 0}
 --- !u!114 &1074993001
@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b416308dc225c4582c7c95695227e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  startingSun: 50
+  startingSun: 10
   sunText: {fileID: 0}
 --- !u!4 &1074993002
 Transform:
